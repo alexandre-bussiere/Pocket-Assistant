@@ -24,8 +24,7 @@ public class ParameterFragment extends Fragment {
         binding = FragmentParameterBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textParameter;
-        parameterViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
         return root;
     }
 

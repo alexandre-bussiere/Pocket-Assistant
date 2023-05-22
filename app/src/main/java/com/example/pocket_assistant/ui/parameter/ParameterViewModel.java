@@ -10,7 +10,7 @@ public class ParameterViewModel extends ViewModel {
 
     public ParameterViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is parameter fragment");
+
     }
 
     public LiveData<String> getText() {
