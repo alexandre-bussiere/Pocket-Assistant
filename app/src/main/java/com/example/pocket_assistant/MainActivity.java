@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         float X=sensorEvent.values[0];
         float Y=sensorEvent.values[1];
         float Z=sensorEvent.values[2];
+        Log.d("Debug","Name" + Name);
         Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";");
         //textView2.setText((int) sensorEvent.values[0]);
         //textView3.setText((int) sensorEvent.values[1]);
