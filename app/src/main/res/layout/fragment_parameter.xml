@@ -7,163 +7,145 @@
     tools:context=".ui.parameter.ParameterFragment">
 
 
-    <TextView
-        android:id="@+id/textView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:textSize="@dimen/text_size"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <EditText
-        android:id="@+id/message"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/surname"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message" />
-    <EditText
-        android:id="@+id/message2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textSize="@dimen/text_size"/>
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/rentrez_informations"
+            android:textSize="@dimen/text_size"
+            android:inputType="textCapSentences|textAutoCorrect"/>
 
 
-    <TextView
-        android:id="@+id/textView2.5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/adresse"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message2" />
-    <EditText
-        android:id="@+id/message2.5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2.5" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/surname"
+                android:textSize="@dimen/text_size"/>
+            <EditText
+                android:id="@+id/message2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
 
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/groupe_sanguin"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message2.5" />
-    <EditText
-        android:id="@+id/message3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            <TextView
+                android:id="@+id/textView2.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/adresse"
+                android:textSize="@dimen/text_size" />
+            <EditText
+                android:id="@+id/message2.5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
 
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/allergies"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message3" />
-    <EditText
-        android:id="@+id/message4"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/groupe_sanguin"
+                android:textSize="@dimen/text_size"/>
+            <EditText
+                android:id="@+id/message3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
 
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/pathologies"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message4" />
-    <EditText
-        android:id="@+id/message5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/allergies"
+                android:textSize="@dimen/text_size"/>
+            <EditText
+                android:id="@+id/message4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
 
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/m_dicaments_actuels"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message5" />
-    <EditText
-        android:id="@+id/message6"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/pathologies"
+                android:textSize="@dimen/text_size"/>
+            <EditText
+                android:id="@+id/message5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
 
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/informations_importante"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message6" />
-    <EditText
-        android:id="@+id/message7"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/rentrez_informations"
-        android:textSize="@dimen/text_size"
-        android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/m_dicaments_actuels"
+                android:textSize="@dimen/text_size"/>
+            <EditText
+                android:id="@+id/message6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
 
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/informations_importante"
+                android:textSize="@dimen/text_size"/>
+            <EditText
+                android:id="@+id/message7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
