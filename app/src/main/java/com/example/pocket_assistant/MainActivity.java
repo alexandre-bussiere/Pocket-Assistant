@@ -1,6 +1,11 @@
 package com.example.pocket_assistant;
 
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.pocket_assistant.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

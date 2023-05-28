@@ -23,8 +23,14 @@
 
     <string name="start_detection">Démarrer la détection</string>
 
-    <!-- Setting -->
-    <string name="text_size">Changer la taille du texte</string>
-    <string name="increase">Augmenter la taille</string>
-    <string name="decrease">Diminuer la taille</string>
+    <!-- Account -->
+    <string name="surname">Nom</string>
+    <string name="name">Prénom</string>
+    <string name="allergies">Allergies</string>
+    <string name="groupe_sanguin">Groupe sanguin</string>
+    <string name="informations_importante">Informations importantes</string>
+    <string name="m_dicaments_actuels">Médicaments actuels</string>
+    <string name="pathologies">Pathologies</string>
+    <string name="adresse">Adresse</string>
+
 </resources>
