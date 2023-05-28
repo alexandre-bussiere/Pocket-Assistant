@@ -19,7 +19,9 @@
     <EditText
         android:id="@+id/message"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -36,7 +38,9 @@
     <EditText
         android:id="@+id/message2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -54,7 +58,9 @@
     <EditText
         android:id="@+id/message2.5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2.5" />
@@ -72,7 +78,9 @@
     <EditText
         android:id="@+id/message3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -90,7 +98,9 @@
     <EditText
         android:id="@+id/message4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -108,7 +118,9 @@
     <EditText
         android:id="@+id/message5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -126,7 +138,9 @@
     <EditText
         android:id="@+id/message6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -144,9 +158,12 @@
     <EditText
         android:id="@+id/message7"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/rentrez_informations"
+        android:textSize="@dimen/text_size"
         android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

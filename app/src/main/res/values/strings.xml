@@ -32,5 +32,6 @@
     <string name="m_dicaments_actuels">Médicaments actuels</string>
     <string name="pathologies">Pathologies</string>
     <string name="adresse">Adresse</string>
+    <string name="rentrez_informations">Rentrez vos informations</string>
 
 </resources>
