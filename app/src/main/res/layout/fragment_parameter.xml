@@ -145,6 +145,14 @@
                 android:hint="@string/rentrez_informations"
                 android:textSize="@dimen/text_size"
                 android:inputType="textCapSentences|textAutoCorrect"/>
+
+
+            <TextView
+                android:id="@+id/textView0"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="4dp"
+                android:textSize="@dimen/text_size"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
