@@ -121,16 +121,6 @@
         app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact" />
 
 
-    <Button
-        android:id="@+id/buttonAdd_Contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:text="@string/Button_contact"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view1" />
 
     <EditText
         android:id="@+id/nameEdit"
@@ -322,6 +312,16 @@
         android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
         app:layout_constraintTop_toBottomOf="@+id/phone_view8" />
+    <Button
+        android:id="@+id/buttonAdd_Contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:text="@string/Button_contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view1" />
 
 
 

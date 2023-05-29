@@ -47,36 +47,77 @@ public class ContactFragment extends Fragment {
         name_View=CreateTabContactName();
         phone_View=CreateTabContactPhone();
         context=getActivity();
-
-
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
-        name_View[nbContact].setText(preferences.getString("name",""));
-        phone_View[nbContact].setText(preferences.getString("phone",""));
+        nbContact=preferences.getInt("nbContact",0);
+        for (int i=0; i<10;i++){
+            name_View[i].setText(preferences.getString("name"+i,""));
+            phone_View[i].setText(preferences.getString("phone"+i,""));
+        }
         button_Add_Contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name= name_Edit.getText().toString();
-                String phone= phone_Edit.getText().toString();
-                if(!name.equals("") && !phone.equals("") && nbContact!=10){
-                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("name",name);
-                    editor.putString("phone",phone);
-                    editor.apply();
-                    name_View[nbContact].setText(preferences.getString("name",""));
-                    phone_View[nbContact].setText(preferences.getString("phone",""));
-                    name_Edit.setText("");
-                    phone_Edit.setText("");
-                    nbContact++;
-                    return;
-                }
-
+                Add_Contact();
             }
         });
         return root;
     }
-    public TextView[] CreateTabContactName(){
+    public void Add_Contact(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        String name= name_Edit.getText().toString();
+        String phone= phone_Edit.getText().toString();
+        String nameContact="",phoneContact="";
+        if(!name.equals("") && !phone.equals("") && nbContact!=10){
+            name_View[nbContact].setText(name);
+            phone_View[nbContact].setText(phone);
+            nbContact++;
+            name_Edit.setText("");
+            phone_Edit.setText("");
+            saveData();
+        }
+    }
+    public void Delete_Contact(int numContact){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        String name,phone;
+        for(int i=numContact; i<nbContact-1;i++){
+            name=name_View[i+1].getText().toString();
+            phone=phone_View[i+1].getText().toString();
+            name_View[i].setText(name);
+            phone_View[i].setText(phone);
+        }
+        if (numContact<nbContact){
+            name_View[nbContact-1].setText("");
+            phone_View[nbContact-1].setText("");
+            nbContact--;
+        }
+        saveData();
+    }
+    public void Reset(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        for(int i=0;i<10;i++){
+            editor.putString("name"+i,"");
+            editor.putString("phone"+i,"");
+        }
+        editor.putInt("nbContact",0);
+        editor.apply();
+    }
+    public void saveData(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        String name,phone;
+        for(int i=0;i<10;i++){
+            name=name_View[i].getText().toString();
+            phone=phone_View[i].getText().toString();
+            editor.putString("name"+i,name);
+            editor.putString("phone"+i,phone);
+        }
+        editor.putInt("nbContact",nbContact);
+        editor.apply();
+    }
+        public TextView[] CreateTabContactName(){
         TextView[] name_View= new TextView[10];
         name_View[0]=binding.nameView0;
         name_View[1]=binding.nameView1;
