@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.pocket_assistant.R;
 import com.example.pocket_assistant.databinding.FragmentContactBinding;
 
 public class ContactFragment extends Fragment {
@@ -41,9 +40,9 @@ public class ContactFragment extends Fragment {
         final TextView textView = binding.textContact;
         contactViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        button_Add_Contact=(Button) binding.buttonAddContact;
-        name_Edit=(EditText) binding.nameEdit;
-        phone_Edit=(EditText) binding.phoneEdit;
+        button_Add_Contact=binding.buttonAddContact;
+        name_Edit=binding.nameEdit;
+        phone_Edit= binding.phoneEdit;
         name_View=CreateTabContactName();
         phone_View=CreateTabContactPhone();
         context=getActivity();
@@ -63,11 +62,8 @@ public class ContactFragment extends Fragment {
         return root;
     }
     public void Add_Contact(){
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = preferences.edit();
         String name= name_Edit.getText().toString();
         String phone= phone_Edit.getText().toString();
-        String nameContact="",phoneContact="";
         if(!name.equals("") && !phone.equals("") && nbContact!=10){
             name_View[nbContact].setText(name);
             phone_View[nbContact].setText(phone);
@@ -78,8 +74,6 @@ public class ContactFragment extends Fragment {
         }
     }
     public void Delete_Contact(int numContact){
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = preferences.edit();
         String name,phone;
         for(int i=numContact; i<nbContact-1;i++){
             name=name_View[i+1].getText().toString();
