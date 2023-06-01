@@ -22,14 +22,14 @@ import com.example.pocket_assistant.databinding.FragmentContactBinding;
 
 public class ContactFragment extends Fragment {
 
-    private FragmentContactBinding binding;
+    private  FragmentContactBinding binding;
     private final static int NbContactMax=10;
     EditText name_Edit, phone_Edit;
     Button button_Add_Contact;
     Button button_Delete_All_Coontact;
 
     Button[] buttons_delete_Contact =new Button[NbContactMax];
-    TextView[] name_View= new TextView[NbContactMax],phone_View= new TextView[NbContactMax];
+    public  TextView[] name_View= new TextView[NbContactMax],phone_View= new TextView[NbContactMax];
     static int nbContact=0;
 
     Context context;
@@ -153,7 +153,7 @@ public class ContactFragment extends Fragment {
         return name_View;
 
     }
-    public TextView[] CreateTabContactPhone(){
+    public  TextView[] CreateTabContactPhone(){
         TextView[] phone_View= new TextView[NbContactMax];
         phone_View[0]=binding.phoneView0;
         phone_View[1]=binding.phoneView1;

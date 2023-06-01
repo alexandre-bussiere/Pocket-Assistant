@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.telephony.SmsManager;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.pocket_assistant.databinding.ActivityMainBinding;
 import com.example.pocket_assistant.ui.home.HomeFragment;
+import com.example.pocket_assistant.ui.contact.ContactFragment;
+import com.example.pocket_assistant.ui.home.PopUp;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -39,8 +43,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private LocationManager locationManager;
     boolean stop = false;
 
-    double latitude; ;
-    double longitude;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Z=sensorEvent.values[2];
         //Log.d("Debug","Name" + Name);
         //Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";");
+        MainActivity activity = this;
         if(HomeFragment.Onoffstate){
             Runnable runnable = new Runnable() {
                 @Override
@@ -102,23 +105,70 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 }
             };
             Handler handler = new Handler(Looper.getMainLooper());
-            if( X >= 10  ){
+            if( X >= 10){
                 textView6.setText(getString(R.string.x) + (int) X+ "as overflow");
-                //ouvre pop up
-                handler.postDelayed(runnable,3000);
+
+                PopUp popUp = new PopUp(activity);
+
+                popUp.getStopButton().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUp.mediaPlayer.stop();
+                        popUp.dismiss();
+                        stop=true;
+                        //Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";" + stop);
+                    }
+                });
+
+                popUp.build();
+                popUp.mediaPlayer.start();
+
+                handler.postDelayed(runnable,30000);
+                popUp.dismiss();
 
             }
             if( Y >= 10 ){
                 textView6.setText(getString(R.string.y) + (int) Y+ "as overflow");
-                //ouvre pop up
-                handler.postDelayed(runnable,3000);
+
+                PopUp popUp = new PopUp(activity);
+
+                popUp.getStopButton().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUp.mediaPlayer.stop();
+                        popUp.dismiss();
+                        stop=true;
+                        //Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";" + stop);
+                    }
+                });
+
+                popUp.build();
+                popUp.mediaPlayer.start();
+
+                handler.postDelayed(runnable,30000);
+                popUp.dismiss();
 
             }
             if( Z >= 19 ){
                 textView6.setText(getString(R.string.z) + (int) Z + "as overflow");
-                //ouvre pop up
-                handler.postDelayed(runnable,3000);
 
+                PopUp popUp = new PopUp(activity);
+
+                popUp.getStopButton().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUp.mediaPlayer.stop();
+                        popUp.dismiss();
+                        stop=true;
+                        //Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";" + stop);
+                    }
+                });
+
+                popUp.build();
+                popUp.mediaPlayer.start();
+
+                handler.postDelayed(runnable,30000);
+                popUp.dismiss();
 
             }
         }
@@ -138,21 +188,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void tomber( boolean stop){
         if(!stop){
-            //String num[] = new String[10];
-            //TextView[] tab_numeros = new TextView[10];
-            //tab_numeros[0]=findViewById(R.id.phone_view0);
-            //for(int i =0 ;i<10;i++){
-            //    num[i]=tab_numeros[i].getText().toString();
-            //}
-            for(int b =0 ;b<10;b++){
-                //String numer = num[b];
+            //String num=ContactFragment.CreateTabContactPhone()[0].getText().toString();
+            //TextView numph= findViewById(R.id.phone_view0);
+                //String numer = num;
                 String numer = "0754391322";
                 //String numer = "0629363589";
                 //String numer ="0648481721";
                 if(numer !="0" || numer != null){
                     SmsManager.getDefault().sendTextMessage(numer,null,"Tkt on test l'app" ,null,null);
                 }
-            }
 
         }
     }

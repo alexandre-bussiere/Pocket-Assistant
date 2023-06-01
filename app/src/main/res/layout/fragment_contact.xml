@@ -27,7 +27,6 @@
         android:layout_height="wrap_content"
         android:text="@string/header_contact"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="35sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-8dp" />
@@ -38,7 +37,6 @@
         android:layout_height="wrap_content"
         android:text="@string/subtitle1_contact"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:background="@color/purple_200"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +47,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/default1_name_contact"
-        android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subtitle1_contact" />
@@ -60,7 +57,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/default1_name_phone_number"
-        android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subtitle1_contact" />
@@ -70,7 +66,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/default2_name_contact"
-        android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/default1_contact_name" />
@@ -81,7 +76,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/default2_name_phone_number"
-        android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/default1_contact_phone" />
@@ -320,7 +314,7 @@
         android:id="@+id/buttonAdd_Contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="12dp"
         android:text="@string/Button_contact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
