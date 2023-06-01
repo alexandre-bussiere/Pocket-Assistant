@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -140,7 +141,8 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/text_contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/nameEdit"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/name_view0"
@@ -324,6 +326,96 @@
         app:layout_constraintTop_toBottomOf="@+id/phone_view1" />
 
 
+    <Button
+        android:id="@+id/buttonDelete_AllContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Button_delete_All_contact"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/endList_default_contact" />
+
+    <Button
+        android:id="@+id/delelte_Contact0"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact" />
+    <Button
+        android:id="@+id/delelte_Contact1"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view0" />
+    <Button
+        android:id="@+id/delelte_Contact2"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view1" />
+    <Button
+        android:id="@+id/delelte_Contact3"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view2" />
+    <Button
+        android:id="@+id/delelte_Contact4"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view3" />
+    <Button
+        android:id="@+id/delelte_Contact5"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view4" />
+    <Button
+        android:id="@+id/delelte_Contact6"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view5" />
+    <Button
+        android:id="@+id/delelte_Contact7"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view6" />
+    <Button
+        android:id="@+id/delelte_Contact8"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view7" />
+    <Button
+        android:id="@+id/delelte_Contact9"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
+        app:layout_constraintTop_toBottomOf="@+id/phone_view8" />
 
 
 
