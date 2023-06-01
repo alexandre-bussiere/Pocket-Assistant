@@ -8,6 +8,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.telephony.SmsManager;
 import android.widget.TextView;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private LocationManager locationManager;
+    boolean stop = false;
 
     double latitude; ;
     double longitude;
@@ -91,17 +94,31 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         //Log.d("Debug","Name" + Name);
         //Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";");
         if(HomeFragment.Onoffstate){
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    tomber(stop);
+                    stop = true;
+                }
+            };
+            Handler handler = new Handler(Looper.getMainLooper());
             if( X >= 10  ){
                 textView6.setText(getString(R.string.x) + (int) X+ "as overflow");
-                tomber();
+                //ouvre pop up
+                handler.postDelayed(runnable,3000);
+
             }
             if( Y >= 10 ){
                 textView6.setText(getString(R.string.y) + (int) Y+ "as overflow");
-                tomber();
+                //ouvre pop up
+                handler.postDelayed(runnable,3000);
+
             }
             if( Z >= 19 ){
                 textView6.setText(getString(R.string.z) + (int) Z + "as overflow");
-                tomber();
+                //ouvre pop up
+                handler.postDelayed(runnable,3000);
+
 
             }
         }
@@ -119,17 +136,24 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
-    public void tomber(){
-        //String num[] = new String[10];
-        //TextView[] tab_numeros = new TextView[10];
-        //tab_numeros[0]=findViewById(R.id.phone_view0);
-        //for(int i =0 ;i<10;i++){
-        //    num[i]=tab_numeros[i].getText().toString();
-        //}
-        for(int b =0 ;b<10;b++){
-            //String numer = num[b];
-            String numer = "0754391322";
-            SmsManager.getDefault().sendTextMessage(numer,null,"messagetest",null,null);
+    public void tomber( boolean stop){
+        if(!stop){
+            //String num[] = new String[10];
+            //TextView[] tab_numeros = new TextView[10];
+            //tab_numeros[0]=findViewById(R.id.phone_view0);
+            //for(int i =0 ;i<10;i++){
+            //    num[i]=tab_numeros[i].getText().toString();
+            //}
+            for(int b =0 ;b<1;b++){
+                //String numer = num[b];
+                String numer = "0754391322";
+                //String numer = "0629363589";
+                //String numer ="0648481721";
+                if(numer !="0" || numer != null){
+                    SmsManager.getDefault().sendTextMessage(numer,null,"Tkt on test l'app" ,null,null);
+                }
+            }
+
         }
     }
 
