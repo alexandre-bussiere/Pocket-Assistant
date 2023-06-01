@@ -15,7 +15,7 @@ public class PopUp extends Dialog {
     private TextView titleView, subTitleView;
 
     public PopUp(Activity activity){
-        super(activity, androidx.appcompat.R.style.Theme_AppCompat_Dialog);
+        super(activity, androidx.appcompat.R.style.Theme_AppCompat_DayNight_DarkActionBar);
         setContentView(R.layout.pop_up);
         this.title = "Vous êtes tomber";
         this.subtitle = "Chrono";
