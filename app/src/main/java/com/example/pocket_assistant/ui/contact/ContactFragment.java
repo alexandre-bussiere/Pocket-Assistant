@@ -30,9 +30,6 @@ public class ContactFragment extends Fragment {
 
     Button[] buttons_delete_Contact =new Button[NbContactMax];
     TextView[] name_View= new TextView[NbContactMax],phone_View= new TextView[NbContactMax];
-
-    MediaPlayer mediaPlayer;
-
     static int nbContact=0;
 
     Context context;
@@ -59,7 +56,6 @@ public class ContactFragment extends Fragment {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         nbContact=preferences.getInt("nbContact",0);
-        this.mediaPlayer= MediaPlayer.create(context.getApplicationContext(), R.raw.et_oui_alarme);
         for (int i=0; i<NbContactMax;i++){
             name_View[i].setText(preferences.getString("name"+i,""));
             phone_View[i].setText(preferences.getString("phone"+i,""));
@@ -68,7 +64,7 @@ public class ContactFragment extends Fragment {
         button_Add_Contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                play_alarm();
+                Add_Contact();
             }
         });
         button_Delete_All_Coontact.setOnClickListener(new View.OnClickListener() {
@@ -141,9 +137,6 @@ public class ContactFragment extends Fragment {
         }
         editor.putInt("nbContact",nbContact);
         editor.apply();
-    }
-    public void play_alarm(){
-            mediaPlayer.start();
     }
         public TextView[] CreateTabContactName(){
         TextView[] name_View= new TextView[NbContactMax];
