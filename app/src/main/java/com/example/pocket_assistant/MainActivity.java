@@ -1,14 +1,14 @@
 package com.example.pocket_assistant;
 
-import static android.hardware.Sensor.TYPE_GYROSCOPE;
-
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
+import android.telephony.SmsManager;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,24 +18,29 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.pocket_assistant.databinding.ActivityMainBinding;
+import com.example.pocket_assistant.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
-    private ActivityMainBinding binding;
+    public ActivityMainBinding binding;
+    public static float X;
+    public static float Y;
+    public static float Z;
+    public static String Name;
     private TextView textView2 = null;
     private TextView textView3 = null;
     private TextView textView4 = null;
     private TextView textView5 = null;
     private TextView textView6 = null;
-    private Button btnUpdate;
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
-    private Sensor mGyroscope;
+    private LocationManager locationManager;
 
-
+    double latitude; ;
+    double longitude;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -46,9 +51,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         textView4 = (TextView) findViewById(R.id.textView4);
         textView5 = (TextView) findViewById(R.id.textView5);
         textView6 = (TextView) findViewById(R.id.textView6);
-        btnUpdate = (Button) findViewById(R.id.button);
 
-        SensorActivity();
+        locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
@@ -60,33 +68,69 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
      public void SensorActivity() {
          mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
          mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-         mGyroscope = mSensorManager.getDefaultSensor(TYPE_GYROSCOPE);
      }
-    
-     protected void onResume() {
+
+     public void onResume() {
          super.onResume();
+         SensorActivity();
          mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-         mSensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_NORMAL);
+
      }
      protected void onPause() {
          super.onPause();
-         mSensorManager.unregisterListener(this);
+         //mSensorManager.unregisterListener(this);
      }
+
+     @SuppressLint("SetTextI18n")
      @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        String Name = sensorEvent.sensor.getName();
-        float X=sensorEvent.values[0];
-        float Y=sensorEvent.values[1];
-        float Z=sensorEvent.values[2];
-        Log.d("Debug","Name" + Name);
-        Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";");
-        //textView2.setText((int) sensorEvent.values[0]);
-        //textView3.setText((int) sensorEvent.values[1]);
-        //textView4.setText((int) sensorEvent.values[2]);
+        Name = sensorEvent.sensor.getName();
+        X=sensorEvent.values[0];
+        Y=sensorEvent.values[1];
+        Z=sensorEvent.values[2];
+        //Log.d("Debug","Name" + Name);
+        //Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";");
+        if(HomeFragment.Onoffstate){
+            if( X >= 10  ){
+                textView6.setText(getString(R.string.x) + (int) X+ "as overflow");
+                tomber();
+            }
+            if( Y >= 10 ){
+                textView6.setText(getString(R.string.y) + (int) Y+ "as overflow");
+                tomber();
+            }
+            if( Z >= 19 ){
+                textView6.setText(getString(R.string.z) + (int) Z + "as overflow");
+                tomber();
+
+            }
+        }
+        else {
+            textView6.setText("Protection is off");
+        }
+         textView2.setText(getString(R.string.x) + (int) MainActivity.X);
+         textView3.setText(getString(R.string.y) + (int) MainActivity.Y);
+         textView4.setText(getString(R.string.z) + (int) MainActivity.Z);
+         textView5.setText(getString(R.string.name) + MainActivity.Name);
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+    public void tomber(){
+        //String num[] = new String[10];
+        //TextView[] tab_numeros = new TextView[10];
+        //tab_numeros[0]=findViewById(R.id.phone_view0);
+        //for(int i =0 ;i<10;i++){
+        //    num[i]=tab_numeros[i].getText().toString();
+        //}
+        for(int b =0 ;b<10;b++){
+            //String numer = num[b];
+            String numer = "0754391322";
+            SmsManager.getDefault().sendTextMessage(numer,null,"messagetest",null,null);
+        }
+    }
+
 }
