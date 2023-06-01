@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="strvaluegyro">This are the value of the gyroscope</string>
+    <string name="btnupdate">Update</string>
+    <string name="x">X :</string>
+    <string name="y">Y :</string>
+    <string name="z">Z :</string>
+    <string name="name">Name :</string>
+    <string name="d_marer_la_protection">Démarer la protection</string>
+    <string name="demarer_la_protection">Demarer la protection</string>
 </resources>
