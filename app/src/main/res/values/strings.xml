@@ -33,5 +33,6 @@
     <string name="pathologies">Pathologies</string>
     <string name="adresse">Adresse</string>
     <string name="rentrez_informations">Rentrez vos informations</string>
+    <string name="validez">Validez</string>
 
 </resources>

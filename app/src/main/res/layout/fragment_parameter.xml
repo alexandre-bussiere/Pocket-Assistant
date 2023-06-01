@@ -21,19 +21,19 @@
             android:orientation="vertical" >
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textSize="@dimen/text_size"/>
-        <EditText
-            android:id="@+id/message"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/rentrez_informations"
-            android:textSize="@dimen/text_size"
-            android:inputType="textCapSentences|textAutoCorrect"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="@dimen/text_size"/>
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/rentrez_informations"
+                android:textSize="@dimen/text_size"
+                android:inputType="textCapSentences|textAutoCorrect"/>
 
 
             <TextView
@@ -146,6 +146,20 @@
                 android:textSize="@dimen/text_size"
                 android:inputType="textCapSentences|textAutoCorrect"/>
 
+
+            <Button
+                android:id="@+id/valide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/validez" />
+
+            <EditText
+                android:id="@+id/editTextText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Name" />
 
             <TextView
                 android:id="@+id/textView0"
