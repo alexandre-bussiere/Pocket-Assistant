@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             //for(int i =0 ;i<10;i++){
             //    num[i]=tab_numeros[i].getText().toString();
             //}
-            for(int b =0 ;b<1;b++){
+            for(int b =0 ;b<10;b++){
                 //String numer = num[b];
                 String numer = "0754391322";
                 //String numer = "0629363589";

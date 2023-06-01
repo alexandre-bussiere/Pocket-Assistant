@@ -44,4 +44,21 @@
     <string name="nameacc">Name :</string>
     <string name="d_marer_la_protection">Démarer la protection</string>
     <string name="demarer_la_protection">Demarer la protection</string>
+
+    <string name="header_contact"><b>Contact list</b></string>
+    <string name="subtitle1_contact">Default Contact</string>
+    <string name="default1_name_contact">SAMU</string>
+    <string name="default1_name_phone_number">15</string>
+    <string name="default2_name_contact">Pompier</string>
+    <string name="default2_name_phone_number">18</string>
+    <string name="EndList_default_contact"> </string>
+    <string name="subtitle2_contact">Other Contact</string>
+    <string name="EndList_other_contact"> </string>
+    <string name="Button_contact">Add a contact</string>
+    <string name="item_name_contact">Enter his name</string>
+    <string name="item_phone_number_contact">Enter his phone number :</string>
+    <string name="Button_delete_All_contact">delete all added contacts</string>
+
+
+
 </resources>
