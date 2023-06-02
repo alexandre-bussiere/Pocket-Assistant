@@ -2,6 +2,7 @@ package com.example.pocket_assistant;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -36,12 +37,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private TextView textView2 = null;
     private TextView textView3 = null;
     private TextView textView4 = null;
-    private TextView textView5 = null;
     private TextView textView6 = null;
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private LocationManager locationManager;
     boolean stop = false;
+
+    String phone ="";
 
 
     @Override
@@ -54,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         textView2 = (TextView) findViewById(R.id.textView2);
         textView3 = (TextView) findViewById(R.id.textView3);
         textView4 = (TextView) findViewById(R.id.textView4);
-        textView5 = (TextView) findViewById(R.id.textView5);
         textView6 = (TextView) findViewById(R.id.textView6);
 
         locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
@@ -69,6 +70,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+        Intent intent= getIntent();
+        if (intent!=null){
+            intent.putExtra("contact","");
+            phone= intent.getStringExtra("contact");
+        }
     }
     public void SensorActivity() {
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
@@ -124,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 popUp.mediaPlayer.start();
 
                 handler.postDelayed(runnable,30000);
-                popUp.dismiss();
 
             }
             if( Y >= 10 ){
@@ -146,7 +151,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 popUp.mediaPlayer.start();
 
                 handler.postDelayed(runnable,30000);
-                popUp.dismiss();
 
             }
             if( Z >= 19 ){
@@ -168,17 +172,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 popUp.mediaPlayer.start();
 
                 handler.postDelayed(runnable,30000);
-                popUp.dismiss();
 
             }
         }
         else {
-            textView6.setText("Protection is off");
+            //textView6.setText("Protection is off");
         }
         textView2.setText(getString(R.string.x) + (int) MainActivity.X);
         textView3.setText(getString(R.string.y) + (int) MainActivity.Y);
         textView4.setText(getString(R.string.z) + (int) MainActivity.Z);
-        textView5.setText(getString(R.string.nameacc) + MainActivity.Name);
     }
 
     @Override
@@ -187,17 +189,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void tomber( boolean stop){
-        if(!stop){
-            //String num=ContactFragment.CreateTabContactPhone()[0].getText().toString();
-            //TextView numph= findViewById(R.id.phone_view0);
-                //String numer = num;
-                String numer = "0754391322";
-                //String numer = "0629363589";
-                //String numer ="0648481721";
-                if(numer !="0" || numer != null){
-                    SmsManager.getDefault().sendTextMessage(numer,null,"Tkt on test l'app" ,null,null);
-                }
 
+        if(!stop){
+            //String numer = num;
+            String numer = "0754391322";
+            //String numer = ContactFragment.phone;
+            //Log.d("Debug",numer);
+            //String numer = "0629363589";
+            //String numer ="0648481721";
+            SmsManager.getDefault().sendTextMessage(numer,null,"Je suis tomber" ,null,null);
         }
     }
 

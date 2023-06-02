@@ -1,417 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.contact.ContactFragment">
 
-    <TextView
-        android:id="@+id/text_contact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1" />
-
-    <TextView
-        android:id="@+id/Contact_List"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/header_contact"
-        android:textAlignment="center"
-        android:textSize="35sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-8dp" />
-
-    <TextView
-        android:id="@+id/subtitle1_contact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/subtitle1_contact"
-        android:textAlignment="center"
-        android:background="@color/purple_200"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Contact_List" />
-
-    <TextView
-        android:id="@+id/default1_contact_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/default1_name_contact"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle1_contact" />
-
-    <TextView
-        android:id="@+id/default1_contact_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/default1_name_phone_number"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle1_contact" />
-
-    <TextView
-        android:id="@+id/default2_contact_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/default2_name_contact"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/default1_contact_name" />
-
-    <TextView
-        android:id="@+id/default2_contact_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/default2_name_phone_number"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/default1_contact_phone" />
-
-    <TextView
-        android:id="@+id/endList_default_contact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/EndList_default_contact"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/default2_contact_name" />
-
-    <TextView
-        android:id="@+id/subtitle2_contact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/darkGreen"
-        android:text="@string/subtitle2_contact"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/endList_default_contact" />
-
-    <TextView
-        android:id="@+id/endList_other_contact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/EndList_default_contact"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact" />
-
-
-
-    <EditText
-        android:id="@+id/nameEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/item_name_contact"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdd_Contact"
-        />
-
-    <EditText
-        android:id="@+id/phoneEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/item_phone_number_contact"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_contact"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEdit"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/name_view0"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact" />
-
-    <TextView
-        android:id="@+id/phone_view0"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact" />
-    <TextView
-        android:id="@+id/name_view1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view0" />
-
-    <TextView
-        android:id="@+id/phone_view1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view0" />
-    <TextView
-        android:id="@+id/name_view2"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view1" />
-
-    <TextView
-        android:id="@+id/phone_view2"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view1" />
-    <TextView
-        android:id="@+id/name_view3"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view2" />
-
-    <TextView
-        android:id="@+id/phone_view3"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view2" />
-    <TextView
-        android:id="@+id/name_view4"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view3" />
-
-    <TextView
-        android:id="@+id/phone_view4"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view3" />
-    <TextView
-        android:id="@+id/name_view5"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view4" />
-
-    <TextView
-        android:id="@+id/phone_view5"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view4" />
-    <TextView
-        android:id="@+id/name_view6"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view5" />
-
-    <TextView
-        android:id="@+id/phone_view6"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view5" />
-    <TextView
-        android:id="@+id/name_view7"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view6" />
-
-    <TextView
-        android:id="@+id/phone_view7"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view6" />
-    <TextView
-        android:id="@+id/name_view8"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view7" />
-
-    <TextView
-        android:id="@+id/phone_view8"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view7" />
-    <TextView
-        android:id="@+id/name_view9"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_view8" />
-
-    <TextView
-        android:id="@+id/phone_view9"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view8" />
-
-
-    <Button
-        android:id="@+id/buttonAdd_Contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/Button_contact"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view1" />
-
-    <Button
-        android:id="@+id/buttonDelete_AllContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Button_delete_All_contact"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/endList_default_contact" />
-
-    <Button
-        android:id="@+id/delelte_Contact0"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact" />
-    <Button
-        android:id="@+id/delelte_Contact1"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view0" />
-    <Button
-        android:id="@+id/delelte_Contact2"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view1" />
-    <Button
-        android:id="@+id/delelte_Contact3"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view2" />
-    <Button
-        android:id="@+id/delelte_Contact4"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view3" />
-    <Button
-        android:id="@+id/delelte_Contact5"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view4" />
-    <Button
-        android:id="@+id/delelte_Contact6"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view5" />
-    <Button
-        android:id="@+id/delelte_Contact7"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view6" />
-    <Button
-        android:id="@+id/delelte_Contact8"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view7" />
-    <Button
-        android:id="@+id/delelte_Contact9"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        app:icon="@android:drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="@+id/endList_other_contact"
-        app:layout_constraintTop_toBottomOf="@+id/phone_view8" />
-
-
-
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".ui.contact.ContactFragment">
+    <TextView android:id="@+id/text_contact" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:textAlignment="center" android:textSize="20sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="1"/>
+    <TextView android:id="@+id/Contact_List" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/header_contact" android:textAlignment="center" android:textColor="@color/black" android:textSize="35sp" app:layout_constraintTop_toTopOf="parent" tools:layout_editor_absoluteX="-8dp"/>
+    <TextView android:id="@+id/subtitle1_contact" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subtitle1_contact" android:textAlignment="center" android:background="@color/purple_200" android:textSize="30sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/Contact_List"/>
+    <TextView android:id="@+id/default1_contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default1_name_contact" android:textSize="25sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/subtitle1_contact"/>
+    <TextView android:id="@+id/default1_contact_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="32dp" android:text="@string/default1_name_phone_number" android:textSize="25sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/subtitle1_contact"/>
+    <TextView android:id="@+id/default2_contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default2_name_contact" android:textSize="25sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/default1_contact_name"/>
+    <TextView android:id="@+id/default2_contact_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="32dp" android:text="@string/default2_name_phone_number" android:textSize="25sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/default1_contact_phone"/>
+    <TextView android:id="@+id/endList_default_contact" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/EndList_default_contact" android:textAlignment="center" android:textSize="30sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/default2_contact_name"/>
+    <TextView android:id="@+id/subtitle2_contact" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/darkGreen" android:text="@string/subtitle2_contact" android:textAlignment="center" android:textSize="30sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/endList_default_contact"/>
+    <TextView android:id="@+id/endList_other_contact" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/EndList_default_contact" android:textAlignment="center" android:textSize="30sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact"/>
+    <EditText android:id="@+id/nameEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/item_name_contact" android:textSize="25sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/buttonAdd_Contact"/>
+    <EditText android:id="@+id/phoneEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/item_phone_number_contact" android:textSize="25sp" app:layout_constraintBottom_toTopOf="@+id/text_contact" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/nameEdit" app:layout_constraintVertical_bias="0.0"/>
+    <TextView android:id="@+id/name_view0" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact"/>
+    <TextView android:id="@+id/phone_view0" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact"/>
+    <TextView android:id="@+id/name_view1" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view0"/>
+    <TextView android:id="@+id/phone_view1" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view0"/>
+    <TextView android:id="@+id/name_view2" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view1"/>
+    <TextView android:id="@+id/phone_view2" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view1"/>
+    <TextView android:id="@+id/name_view3" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view2"/>
+    <TextView android:id="@+id/phone_view3" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view2"/>
+    <TextView android:id="@+id/name_view4" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view3"/>
+    <TextView android:id="@+id/phone_view4" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view3"/>
+    <TextView android:id="@+id/name_view5" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view4"/>
+    <TextView android:id="@+id/phone_view5" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view4"/>
+    <TextView android:id="@+id/name_view6" android:layout_width="200dp" android:layout_height="wrap_content" android:textColor="@color/black" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view5"/>
+    <TextView android:id="@+id/phone_view6" android:layout_width="200dp" android:layout_height="wrap_content" android:textColor="@color/black" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view5"/>
+    <TextView android:id="@+id/name_view7" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view6"/>
+    <TextView android:id="@+id/phone_view7" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view6"/>
+    <TextView android:id="@+id/name_view8" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view7"/>
+    <TextView android:id="@+id/phone_view8" android:layout_width="200dp" android:layout_height="wrap_content" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view7"/>
+    <TextView android:id="@+id/name_view9" android:layout_width="200dp" android:layout_height="wrap_content" android:textColor="@color/black" android:textSize="23sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/name_view8"/>
+    <TextView android:id="@+id/phone_view9" android:layout_width="200dp" android:layout_height="wrap_content" android:textColor="@color/black" android:textSize="23sp" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view8"/>
+    <Button android:id="@+id/buttonAdd_Contact" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="252dp" android:text="@string/Button_contact" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/phone_view1"/>
+    <Button android:id="@+id/buttonDelete_AllContact" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Button_delete_All_contact" android:textColor="@color/black" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@+id/endList_default_contact"/>
+    <Button android:id="@+id/delelte_Contact0" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/subtitle2_contact"/>
+    <Button android:id="@+id/delelte_Contact1" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view0"/>
+    <Button android:id="@+id/delelte_Contact2" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view1"/>
+    <Button android:id="@+id/delelte_Contact3" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view2"/>
+    <Button android:id="@+id/delelte_Contact4" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view3"/>
+    <Button android:id="@+id/delelte_Contact5" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view4"/>
+    <Button android:id="@+id/delelte_Contact6" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view5"/>
+    <Button android:id="@+id/delelte_Contact7" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view6"/>
+    <Button android:id="@+id/delelte_Contact8" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view7"/>
+    <Button android:id="@+id/delelte_Contact9" android:layout_width="36dp" android:layout_height="33dp" android:layout_marginEnd="8dp" app:icon="@android:drawable/ic_delete" app:layout_constraintEnd_toEndOf="@+id/endList_other_contact" app:layout_constraintTop_toBottomOf="@+id/phone_view8"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

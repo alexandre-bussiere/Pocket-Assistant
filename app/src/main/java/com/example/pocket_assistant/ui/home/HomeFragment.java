@@ -46,12 +46,11 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textView3;
 
         textView2 = binding.textView2;
         textView3 = binding.textView3;
         textView4 = binding.textView4;
-        textView5 = binding.textView5;
         textView6 = binding.textView6;
 
         OnOffSwitch = binding.switch1;
