@@ -42,13 +42,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor mAccelerometer;
     private LocationManager locationManager;
     boolean stop = false;
-
+    static boolean start = false;
     String phone ="";
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -70,11 +72,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        Intent intent= getIntent();
-        if (intent!=null){
-            intent.putExtra("contact","");
-            phone= intent.getStringExtra("contact");
-        }
+
+        start = true;
     }
     public void SensorActivity() {
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 popUp.build();
                 popUp.mediaPlayer.start();
 
-                handler.postDelayed(runnable,30000);
+                handler.postDelayed(runnable,3000);
 
             }
             if( Y >= 10 ){
@@ -150,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 popUp.build();
                 popUp.mediaPlayer.start();
 
-                handler.postDelayed(runnable,30000);
+                handler.postDelayed(runnable,3000);
 
             }
             if( Z >= 19 ){
@@ -171,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 popUp.build();
                 popUp.mediaPlayer.start();
 
-                handler.postDelayed(runnable,30000);
+                handler.postDelayed(runnable,3000);
 
             }
         }
@@ -189,8 +188,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void tomber( boolean stop){
-
-        if(!stop){
+        if(!stop && start){
             Intent intent=getIntent();
             String numer = intent.getStringExtra("contact");
             if (numer!=null && numer.length()!=0){

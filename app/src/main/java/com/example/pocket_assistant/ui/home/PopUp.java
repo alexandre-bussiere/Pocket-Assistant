@@ -37,6 +37,6 @@ public class PopUp extends Dialog {
         show();
         titleView.setText(title);
 
-        this.mediaPlayer= MediaPlayer.create(getContext().getApplicationContext(), R.raw.et_oui_alarme);
+        this.mediaPlayer= MediaPlayer.create(getContext().getApplicationContext(), R.raw.reveiljaz);
     }
 }
