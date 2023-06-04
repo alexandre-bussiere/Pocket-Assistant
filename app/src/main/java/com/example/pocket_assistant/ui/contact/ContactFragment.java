@@ -1,6 +1,7 @@
 package com.example.pocket_assistant.ui.contact;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.pocket_assistant.MainActivity;
 import com.example.pocket_assistant.R;
 import com.example.pocket_assistant.databinding.FragmentContactBinding;
 
@@ -95,6 +97,7 @@ public class ContactFragment extends Fragment {
             name_Edit.setText("");
             phone_Edit.setText("");
             saveData();
+            TransferData();
         }
     }
     public void Delete_Contact(int numContact){
@@ -137,6 +140,12 @@ public class ContactFragment extends Fragment {
         }
         editor.putInt("nbContact",nbContact);
         editor.apply();
+    }
+    public void TransferData(){
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        String phone= phone_View[0].getText().toString();
+        intent.putExtra("contact",phone);
+        startActivity(intent);
     }
         public TextView[] CreateTabContactName(){
         TextView[] name_View= new TextView[NbContactMax];
