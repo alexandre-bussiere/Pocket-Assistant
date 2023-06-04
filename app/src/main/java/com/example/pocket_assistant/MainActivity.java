@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor mAccelerometer;
     private LocationManager locationManager;
     boolean stop = false;
-    static boolean start = false;
     String phone ="";
 
 
@@ -72,8 +71,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
-        start = true;
     }
     public void SensorActivity() {
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
@@ -105,7 +102,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {
-                    tomber(stop);
+                    if(!stop){
+                        tomber();
+                    }
+
                     stop = true;
                 }
             };
@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         popUp.mediaPlayer.stop();
                         popUp.dismiss();
                         stop=true;
-                        //Log.d("Debug",": X: " + sensorEvent.values[0] + "; Y: " + sensorEvent.values[1] + "; Z: " + sensorEvent.values[2] + ";" + stop);
                     }
                 });
 
@@ -187,8 +186,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
-    public void tomber( boolean stop){
-        if(!stop && start){
+    public void tomber(){
+        if(ContactFragment.start){
             Intent intent=getIntent();
             String numer = intent.getStringExtra("contact");
             if (numer!=null && numer.length()!=0){

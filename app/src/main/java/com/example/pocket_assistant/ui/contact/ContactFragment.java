@@ -29,6 +29,7 @@ public class ContactFragment extends Fragment {
     EditText name_Edit, phone_Edit;
     Button button_Add_Contact;
     Button button_Delete_All_Coontact;
+    public static boolean start = false;
 
     Button[] buttons_delete_Contact =new Button[NbContactMax];
     public  TextView[] name_View= new TextView[NbContactMax],phone_View= new TextView[NbContactMax];
@@ -85,6 +86,7 @@ public class ContactFragment extends Fragment {
                 }
             });
         }
+        start = true;
         return root;
     }
     public void Add_Contact(){
