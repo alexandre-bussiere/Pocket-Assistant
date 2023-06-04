@@ -25,7 +25,7 @@ import com.example.pocket_assistant.databinding.FragmentContactBinding;
 public class ContactFragment extends Fragment {
 
     private  FragmentContactBinding binding;
-    private final static int NbContactMax=10;
+    private final static int NbContactMax=7;
     EditText name_Edit, phone_Edit;
     Button button_Add_Contact;
     Button button_Delete_All_Coontact;
@@ -157,9 +157,6 @@ public class ContactFragment extends Fragment {
         name_View[4]=binding.nameView4;
         name_View[5]=binding.nameView5;
         name_View[6]=binding.nameView6;
-        name_View[7]=binding.nameView7;
-        name_View[8]=binding.nameView8;
-        name_View[9]=binding.nameView9;
         return name_View;
 
     }
@@ -172,9 +169,6 @@ public class ContactFragment extends Fragment {
         phone_View[4]=binding.phoneView4;
         phone_View[5]=binding.phoneView5;
         phone_View[6]=binding.phoneView6;
-        phone_View[7]=binding.phoneView7;
-        phone_View[8]=binding.phoneView8;
-        phone_View[9]=binding.phoneView9;
         return phone_View;
 
     }
@@ -187,9 +181,6 @@ public class ContactFragment extends Fragment {
         buttons_delete[4]=binding.delelteContact4;
         buttons_delete[5]=binding.delelteContact5;
         buttons_delete[6]=binding.delelteContact6;
-        buttons_delete[7]=binding.delelteContact7;
-        buttons_delete[8]=binding.delelteContact8;
-        buttons_delete[9]=binding.delelteContact9;
         return buttons_delete;
     }
 

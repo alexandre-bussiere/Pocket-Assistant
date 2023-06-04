@@ -191,13 +191,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void tomber( boolean stop){
 
         if(!stop){
-            //String numer = num;
-            String numer = "0754391322";
-            //String numer = ContactFragment.phone;
-            //Log.d("Debug",numer);
-            //String numer = "0629363589";
-            //String numer ="0648481721";
-            SmsManager.getDefault().sendTextMessage(numer,null,"Je suis tomber" ,null,null);
+            Intent intent=getIntent();
+            String numer = intent.getStringExtra("contact");
+            if (numer!=null && numer.length()!=0){
+                SmsManager.getDefault().sendTextMessage(numer,null,"Je suis tomber" ,null,null);
+            }
         }
     }
 
